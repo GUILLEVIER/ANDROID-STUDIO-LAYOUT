@@ -5,30 +5,36 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="@android:color/white">
-  
+
   <ImageView
       android:id="@+id/logo"
       android:layout_gravity="center"
       android:layout_width="160dp"
       android:layout_height="120dp"
+      android:contentDescription="TODO"
       android:src="@drawable/logo" />
 
   <EditText
       android:id="@+id/user_input"
       android:layout_margin="12dp"
+      android:autofillHints=""
       android:drawablePadding="12dp"
       android:drawableStart="@drawable/vector_person"
       android:hint="@string/user_hint"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:inputType="text" />
 
   <EditText
+      android:id="@+id/user_password"
       android:layout_margin="12dp"
+      android:autofillHints=""
       android:drawablePadding="12dp"
       android:drawableStart="@drawable/vector_lock"
       android:hint="@string/password_hint"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:inputType="textVisiblePassword" />
 
   <Space
       android:layout_width="match_parent"

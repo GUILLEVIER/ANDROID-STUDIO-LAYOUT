@@ -7,5 +7,6 @@
       android:id="@+id/logo"
       android:layout_width="@dimen/width_logo"
       android:layout_height="@dimen/height_logo"
+      android:contentDescription="TODO"
       android:src="@drawable/logo" />
 </merge>

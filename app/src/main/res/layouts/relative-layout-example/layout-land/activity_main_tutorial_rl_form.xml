@@ -11,8 +11,9 @@
       android:layout_alignParentStart="true"
       android:layout_alignParentTop="true"
       android:layout_marginEnd="48dp"
+      android:autofillHints=""
       android:ems="10"
-      android:hint="Nombres"
+      android:hint="@string/nombres"
       android:inputType="textPersonName" />
 
   <EditText
@@ -21,8 +22,9 @@
       android:layout_height="wrap_content"
       android:layout_alignParentTop="true"
       android:layout_toEndOf="@+id/input_nombre"
+      android:autofillHints=""
       android:ems="10"
-      android:hint="Apellidos"
+      android:hint="@string/apellidos"
       android:inputType="textPersonName" />
 
   <TextView
@@ -33,7 +35,7 @@
       android:layout_below="@+id/input_apellido"
       android:paddingBottom="8dp"
       android:paddingTop="16dp"
-      android:text="Estado civil"
+      android:text="@string/estado_civil"
       android:textAppearance="?android:attr/textAppearanceMedium" />
 
   <Spinner
@@ -53,7 +55,7 @@
       android:layout_below="@+id/input_apellido"
       android:paddingBottom="8dp"
       android:paddingTop="16dp"
-      android:text="Cargo"
+      android:text="@string/cargo"
       android:textAppearance="?android:attr/textAppearanceMedium" />
 
   <Spinner

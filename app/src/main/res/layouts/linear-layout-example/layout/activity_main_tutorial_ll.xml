@@ -11,7 +11,7 @@
       android:layout_height="0dp"
       android:layout_gravity="center_horizontal"
       android:layout_weight="1"
-      android:text="Conectar"
+      android:text="@string/conectar"
       android:textAppearance="?android:attr/textAppearanceLarge" />
 
   <EditText
@@ -20,7 +20,9 @@
       android:layout_height="0dp"
       android:layout_gravity="center_horizontal"
       android:layout_weight="1"
-      android:hint="Correo" />
+      android:autofillHints=""
+      android:hint="@string/correo"
+      android:inputType="text" />
 
   <EditText
       android:id="@+id/input_contrasena"
@@ -28,8 +30,9 @@
       android:layout_height="0dp"
       android:layout_gravity="center_horizontal"
       android:layout_weight="1"
+      android:autofillHints=""
       android:ems="10"
-      android:hint="Contraseña"
+      android:hint="@string/password_hint"
       android:inputType="textPassword" />
 
   <Button
@@ -39,7 +42,7 @@
       android:layout_height="0dp"
       android:layout_gravity="center_horizontal"
       android:layout_weight="1"
-      android:text="Iniciar Sesion" />
+      android:text="@string/iniciar_sesion" />
 
   <TextView
       android:id="@+id/texto_olvidaste_contrasena"
@@ -48,7 +51,7 @@
       android:layout_gravity="center_horizontal"
       android:layout_weight="1"
       android:gravity="center_vertical"
-      android:text="¿Olvidaste tu constraseña?"
+      android:text="@string/olvidaste_tu_password"
       android:textAppearance="?android:attr/textAppearanceMedium"
       android:textColor="#0E8AEE" />
 </LinearLayout>

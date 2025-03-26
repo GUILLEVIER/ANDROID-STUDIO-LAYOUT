@@ -7,7 +7,7 @@
   <Button
       android:layout_width="match_parent"
       android:layout_height="60dp"
-      android:text="Saltar"
+      android:text="@string/saltar"
       android:id="@+id/boton_saltar"
       android:layout_gravity="center_horizontal|bottom" />
 
@@ -16,6 +16,7 @@
       android:layout_height="match_parent"
       android:id="@+id/imagen_background"
       android:layout_gravity="top|center"
+      android:contentDescription="TODO"
       android:src="@drawable/background_frame_layout"
       android:scaleType="centerCrop" />
 
@@ -24,6 +25,7 @@
       android:layout_height="wrap_content"
       android:id="@+id/imagen_estadistica"
       android:layout_gravity="center"
+      android:contentDescription="TODO"
       android:src="@drawable/ejemplo_estadistica"
       android:padding="16dp" />
 </FrameLayout>

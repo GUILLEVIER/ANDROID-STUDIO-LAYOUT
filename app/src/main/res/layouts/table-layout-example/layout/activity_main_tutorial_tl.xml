@@ -14,13 +14,13 @@
     <TextView
         android:layout_column="0"
         android:padding="3dip"
-        android:text="Producto"
+        android:text="@string/producto"
         android:textColor="@android:color/white" />
 
     <TextView
         android:layout_column="2"
         android:padding="3dip"
-        android:text="Subtotal"
+        android:text="@string/subtotal"
         android:textColor="@android:color/white" />
   </TableRow>
 
@@ -29,13 +29,13 @@
     <TextView
         android:layout_column="0"
         android:padding="3dip"
-        android:text="Jabón de manos x 1" />
+        android:text="@string/item_1" />
 
     <TextView
         android:layout_column="2"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="3dip"
-        android:text="$2" />
+        android:text="@string/value_1" />
   </TableRow>
 
   <TableRow>
@@ -43,13 +43,13 @@
     <TextView
         android:layout_column="0"
         android:padding="3dip"
-        android:text="Shampoo Monster x 1" />
+        android:text="@string/item_2" />
 
     <TextView
         android:layout_column="2"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="3dip"
-        android:text="$10" />
+        android:text="@string/value_2" />
   </TableRow>
 
   <TableRow
@@ -62,16 +62,16 @@
         android:layout_height="wrap_content"
         android:layout_column="0"
         android:padding="3dip"
-        android:text="Pastas Duria x 2" />
+        android:text="@string/item_3" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="3dip"
-        android:text="$18" />
+        android:text="@string/value_3" />
   </TableRow>
 
   <TableRow
@@ -84,16 +84,16 @@
         android:layout_height="wrap_content"
         android:layout_column="0"
         android:padding="3dip"
-        android:text="Detergente Limpiadin x 1" />
+        android:text="@string/item_4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="3dip"
-        android:text="$13,4" />
+        android:text="@string/value_4" />
   </TableRow>
 
   <View
@@ -105,7 +105,7 @@
     <TextView
         android:layout_column="1"
         android:padding="3dip"
-        android:text="Subtotal"
+        android:text="@string/subtotal"
         android:textColor="#128675" />
 
     <TextView
@@ -113,10 +113,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        android:layout_gravity="left"
-        android:gravity="right"
+        android:layout_gravity="start"
+        android:gravity="end"
         android:padding="3dip"
-        android:text="$43,4" />
+        android:text="@string/value_5" />
   </TableRow>
 
   <TableRow
@@ -129,17 +129,17 @@
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:padding="3dip"
-        android:text="Costo envío"
+        android:text="@string/costo_envio"
         android:textColor="#128675" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        android:layout_gravity="left"
-        android:gravity="right"
+        android:layout_gravity="start"
+        android:gravity="end"
         android:padding="3dip"
-        android:text="$10" />
+        android:text="@string/value_envio" />
   </TableRow>
 
   <TableRow
@@ -152,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:padding="3dip"
-        android:text="Cupón"
+        android:text="@string/cupon"
         android:textColor="#128675" />
 
     <TextView
@@ -163,7 +163,7 @@
         android:layout_gravity="start"
         android:gravity="end"
         android:padding="3dip"
-        android:text="-$5" />
+        android:text="@string/value_cupon" />
   </TableRow>
 
   <TableRow
@@ -176,7 +176,7 @@
         android:layout_height="wrap_content"
         android:layout_column="1"
         android:padding="3dip"
-        android:text="Total"
+        android:text="@string/total"
         android:textColor="#128675" />
 
     <TextView
@@ -186,7 +186,7 @@
         android:layout_gravity="start"
         android:gravity="end"
         android:padding="3dip"
-        android:text="$48,4" />
+        android:text="@string/value_total" />
   </TableRow>
 
 </TableLayout>

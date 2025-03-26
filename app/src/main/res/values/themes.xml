@@ -35,7 +35,7 @@
   </style>
 
   <!-- Aplication Theme Calculadora -->
-  <style name="AppTheme.BotonCalculadora" parent="TextAppearance.AppCompat.Headline">
+  <style name="AppTheme.BotonCalculadora" parent="">
     <item name="android:textColor">@android:color/white</item>
     <item name="android:gravity">center</item>
     <item name="android:padding">36dp</item>
