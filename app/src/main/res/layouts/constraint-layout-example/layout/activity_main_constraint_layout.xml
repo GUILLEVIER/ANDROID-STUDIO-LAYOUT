@@ -36,6 +36,7 @@
   <!-- Usuario -->
 
   <!-- Contraseña -->
+
   <EditText
       android:id="@+id/user_input"
       android:layout_width="0dp"
@@ -48,7 +49,7 @@
       android:hint="@string/user_hint"
       app:layout_constraintBottom_toTopOf="@+id/editText"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/logo" />
 

@@ -62,7 +62,11 @@ android {
                     "src\\main\\res\\layouts",
                     "src\\main\\res\\layouts\\merge-include-example",
                     "src\\main\\res\\layouts",
-                    "src\\main\\res\\layouts\\relative-layout-example"
+                    "src\\main\\res\\layouts\\relative-layout-example",
+                    "src\\main\\res",
+                    "src\\main\\res\\layouts\\table-layout-example",
+                    "src\\main\\res",
+                    "src\\main\\res\\layouts\\grid_layout_example"
                 )
             }
         }
