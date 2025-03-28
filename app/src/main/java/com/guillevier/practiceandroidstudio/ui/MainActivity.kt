@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio
+package com.guillevier.practiceandroidstudio.ui
 
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.guillevier.practiceandroidstudio.R
 
 class MainActivity : ComponentActivity() {
     private lateinit var editTextUserName: EditText

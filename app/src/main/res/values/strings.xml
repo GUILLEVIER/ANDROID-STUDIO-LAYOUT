@@ -52,4 +52,5 @@
     <item>Informática</item>
     <item>Jardinería</item>
   </string-array>
+  <string name="button_text">Haz clic aquí</string>
 </resources>

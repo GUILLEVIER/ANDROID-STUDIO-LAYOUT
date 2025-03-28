@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.cli.jvm.main
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -7,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.guillevier.practiceandroidstudio"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.guillevier.practiceandroidstudio"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -32,14 +30,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
+        dataBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -66,7 +65,7 @@ android {
                     "src\\main\\res",
                     "src\\main\\res\\layouts\\table-layout-example",
                     "src\\main\\res",
-                    "src\\main\\res\\layouts\\grid_layout_example"
+                    "src\\main\\res\\layouts\\grid_layout_example", "src\\main\\res", "src\\main\\res\\layouts\\bindings-layout-example"
                 )
             }
         }
@@ -84,6 +83,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation("de.hdodenhof:circleimageview:3.0.1")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
