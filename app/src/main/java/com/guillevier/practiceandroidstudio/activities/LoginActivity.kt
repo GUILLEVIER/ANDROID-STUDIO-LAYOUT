@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.ui.activities
+package com.guillevier.practiceandroidstudio.activities
 
 import android.os.Bundle
 import android.widget.Button

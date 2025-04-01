@@ -13,7 +13,7 @@
       tools:targetApi="31"
       tools:ignore="ExtraText">
     <activity
-        android:name=".ui.activities.NewScoreActivityClickListener"
+        android:name=".activities.LoginActivityCompose"
         android:exported="true"
         android:theme="@style/AppTheme">
       <intent-filter>

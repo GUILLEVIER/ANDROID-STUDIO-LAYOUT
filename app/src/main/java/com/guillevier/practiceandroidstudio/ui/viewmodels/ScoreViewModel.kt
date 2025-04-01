@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.viewmodel
+package com.guillevier.practiceandroidstudio.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 

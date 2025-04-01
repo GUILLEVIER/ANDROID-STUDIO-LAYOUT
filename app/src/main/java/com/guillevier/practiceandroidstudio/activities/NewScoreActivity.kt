@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.ui.activities
+package com.guillevier.practiceandroidstudio.activities
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.guillevier.practiceandroidstudio.R
-import com.guillevier.practiceandroidstudio.viewmodel.NewScoreViewModel
+import com.guillevier.practiceandroidstudio.ui.viewmodels.NewScoreViewModel
 
 // FUNCIONAL
 class NewScoreActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.viewmodel
+package com.guillevier.practiceandroidstudio.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,11 +9,10 @@ class RegisterViewModel : ViewModel() {
     var surname: String = ""
     var email: String = ""
     var password: String = ""
-    var rut: String = ""
 
     fun registerUser (onSuccess: () -> Unit, onError: (String) -> Unit) {
         // Validar los campos
-        if (name.isEmpty() || surname.isEmpty() || email.isEmpty() || password.isEmpty() || rut.isEmpty()) {
+        if (name.isEmpty() || surname.isEmpty() || email.isEmpty() || password.isEmpty()) {
             onError("Por favor, completa todos los campos.")
             return
         }

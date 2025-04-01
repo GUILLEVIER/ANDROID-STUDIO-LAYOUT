@@ -3,57 +3,91 @@ package com.guillevier.practiceandroidstudio.ui.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.compose.rememberNavController
-import com.guillevier.practiceandroidstudio.ui.theme.PracticeAndroidStudioTheme
-import com.guillevier.practiceandroidstudio.viewmodel.LoginViewModel
+import androidx.compose.ui.tooling.preview.Wallpapers
+import com.guillevier.practiceandroidstudio.R
+
+// FUNCIONAL
+// ELEVACIÓN DE ESTADO: EXTRACCIÓN DE VALORES MUTABLES
+// fun LoginScreen(loginViewModel: LoginViewModel = viewModel())
+@Composable
+fun LoginScreen() {
+    var userName by rememberSaveable { mutableStateOf("") }
+    var userPassword by rememberSaveable { mutableStateOf("") }
+    var errorMessage by rememberSaveable { mutableStateOf("") }
+    var successMessage by rememberSaveable { mutableStateOf("") }
+
+    LoginContent(
+        userName = userName,
+        onUserNameChange = { userName = it },
+        userPassword = userPassword,
+        onUserPasswordChange = { userPassword = it },
+        errorMessage = errorMessage,
+        onErrorMessageChange = { errorMessage = it },
+        successMessage = successMessage,
+        onSuccessMessageChange = { successMessage = it })
+}
+
+@Preview(
+    showBackground = true,
+    wallpaper = Wallpapers.GREEN_DOMINATED_EXAMPLE,
+    device = "spec:id=reference_tablet,shape=Normal,width=1280,height=800,unit=dp,dpi=240",
+    locale = "fr-rFR"
+)
+@Composable
+fun LoginScreenPreview() {
+    LoginScreen()
+}
 
 @Composable
-fun LoginScreen(loginViewModel: LoginViewModel = viewModel(), navController: NavController) {
-    var errorMessage by remember { mutableStateOf("") }
-    var successMessage by remember { mutableStateOf("") }
-
+fun LoginContent(
+    userName: String,
+    onUserNameChange: (String) -> Unit,
+    userPassword: String,
+    onUserPasswordChange: (String) -> Unit,
+    errorMessage: String,
+    onErrorMessageChange: (String) -> Unit,
+    successMessage: String,
+    onSuccessMessageChange: (String) -> Unit,
+) {
+    val mediumPadding = dimensionResource(R.dimen.padding_medium)
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
+            .padding(mediumPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TextField(
-            value = loginViewModel.userName,
-            onValueChange = { loginViewModel.userName = it },
-            label = { Text("Usuario") }
+            value = userName,
+            onValueChange = { onUserNameChange(it) },
+            label = { Text("Usuario") },
+            modifier = Modifier.fillMaxWidth(),
         )
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
-            value = loginViewModel.userPassword,
-            onValueChange = { loginViewModel.userPassword = it },
+            value = userPassword,
+            onValueChange = { onUserPasswordChange(it) },
             label = { Text("Contraseña") },
-            visualTransformation = PasswordVisualTransformation()
+            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.fillMaxWidth(),
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = {
-            loginViewModel.loginUser(
-                onSuccess = {
-                    successMessage = "Usuario Logeado."
-                    errorMessage = ""
-                    clearFields(loginViewModel)
-                    navController.navigate("home") {
-                        popUpTo("login") { inclusive = true }
-                    }
-                },
-                onError = { message ->
-                    errorMessage = message
-                    successMessage = ""
-                }
-            )
+            if (userName.isEmpty() || userPassword.isEmpty()) {
+                onErrorMessageChange("Por favor, completa todos los campos.")
+                onSuccessMessageChange("")
+            } else {
+                onErrorMessageChange("")
+                onSuccessMessageChange("Usuario Logeado.")
+                onUserNameChange("")
+                onUserPasswordChange("")
+            }
         }) {
             Text("Iniciar Sesión")
         }
@@ -65,21 +99,5 @@ fun LoginScreen(loginViewModel: LoginViewModel = viewModel(), navController: Nav
         if (successMessage.isNotEmpty()) {
             Text(text = successMessage, color = MaterialTheme.colorScheme.primary)
         }
-    }
-}
-
-private fun clearFields(viewModel: LoginViewModel) {
-    viewModel.userName = ""
-    viewModel.userPassword = ""
-}
-
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    val loginViewModel: LoginViewModel = viewModel()
-    val navController = rememberNavController()
-
-    PracticeAndroidStudioTheme {
-        LoginScreen(loginViewModel, navController)
     }
 }

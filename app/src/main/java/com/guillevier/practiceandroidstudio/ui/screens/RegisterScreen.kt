@@ -2,13 +2,15 @@ package com.guillevier.practiceandroidstudio.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme.shapes
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,10 +19,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.guillevier.practiceandroidstudio.viewmodel.RegisterViewModel
+import androidx.navigation.compose.rememberNavController
+import com.guillevier.practiceandroidstudio.ui.viewmodels.RegisterViewModel
 
 @Composable
 fun RegisterScreen(registerViewModel: RegisterViewModel = viewModel(), navController: NavController) {
@@ -29,44 +33,68 @@ fun RegisterScreen(registerViewModel: RegisterViewModel = viewModel(), navContro
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        TextField(
-            value = registerViewModel.name,
-            onValueChange = { registerViewModel.name = it },
+        OutlinedTextField(
+            value = "",
+            singleLine = true,
+            shape = shapes.large,
+            onValueChange = { },
             label = { Text("Nombre") },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = colorScheme.surface,
+                unfocusedContainerColor = colorScheme.surface,
+                disabledContainerColor = colorScheme.surface,
+            ),
+            isError = false,
         )
-        TextField(
-            value = registerViewModel.surname,
-            onValueChange = { registerViewModel.surname = it },
+        OutlinedTextField(
+            value = "",
+            singleLine = true,
+            shape = shapes.large,
+            onValueChange = { },
             label = { Text("Apellido") },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = colorScheme.surface,
+                unfocusedContainerColor = colorScheme.surface,
+                disabledContainerColor = colorScheme.surface,
+            ),
+            isError = false,
         )
-        TextField(
-            value = registerViewModel.email,
-            onValueChange = { registerViewModel.email = it },
+        OutlinedTextField(
+            value = "",
+            singleLine = true,
+            shape = shapes.large,
+            onValueChange = { },
             label = { Text("Correo Electrónico") },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = colorScheme.surface,
+                unfocusedContainerColor = colorScheme.surface,
+                disabledContainerColor = colorScheme.surface,
+            ),
+            isError = false,
         )
-        TextField(
-            value = registerViewModel.password,
-            onValueChange = { registerViewModel.password = it },
+        OutlinedTextField(
+            value = "",
+            singleLine = true,
+            shape = shapes.large,
+            onValueChange = { },
             label = { Text("Contraseña") },
             modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = colorScheme.surface,
+                unfocusedContainerColor = colorScheme.surface,
+                disabledContainerColor = colorScheme.surface,
+            ),
+            isError = false,
             visualTransformation = PasswordVisualTransformation()
         )
-        TextField(
-            value = registerViewModel.rut,
-            onValueChange = { registerViewModel.rut = it },
-            label = { Text("RUT") },
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        Button(onClick = {
+        OutlinedButton(onClick = {
             registerViewModel.registerUser (
                 onSuccess = {
                     successMessage = "Usuario Registrado."
@@ -100,5 +128,12 @@ private fun clearFields(viewModel: RegisterViewModel) {
     viewModel.surname = ""
     viewModel.email = ""
     viewModel.password = ""
-    viewModel.rut = ""
+}
+
+@Preview(showBackground = true)
+@Composable
+fun RegisterScreenPreview() {
+    val registerViewModel: RegisterViewModel = viewModel()
+    val navController = rememberNavController()
+    RegisterScreen(registerViewModel, navController)
 }

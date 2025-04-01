@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.ui.activities
+package com.guillevier.practiceandroidstudio.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -29,13 +29,5 @@ class GreetingActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PracticeAndroidStudioTheme {
-        GreetingScreen("Android")
     }
 }

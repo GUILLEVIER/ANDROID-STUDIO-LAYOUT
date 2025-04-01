@@ -1,4 +1,4 @@
-package com.guillevier.practiceandroidstudio.ui.activities
+package com.guillevier.practiceandroidstudio.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.guillevier.practiceandroidstudio.R
 import com.guillevier.practiceandroidstudio.databinding.SecondaryActivityBindingLayoutBinding
-import com.guillevier.practiceandroidstudio.viewmodel.SecondaryViewModel
+import com.guillevier.practiceandroidstudio.ui.viewmodels.SecondaryViewModel
 
 // FUNCIONAL
 class SecondaryActivity : ComponentActivity() {
